@@ -1,0 +1,3 @@
+;; .emacs profile, written by Chaozheng Li
+ 
+(load-file "D:/emacsconfig/.emacs")
