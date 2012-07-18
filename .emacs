@@ -1,6 +1,6 @@
 ;; .emacs profile, written by Chaozheng Li
  
-(defconst my-emacs-path           "~/.emacs.d/" "我的emacs相关配置文件的路径")
+(defconst my-emacs-path           "~/emacsconfig/" "我的emacs相关配置文件的路径")
 (defconst my-emacs-my-lisps-path  (concat my-emacs-path "my-lisps/") "我自己写的emacs lisp包的路径")
 (defconst my-emacs-lisps-path     (concat my-emacs-path "lisps/") "我下载的emacs lisp包的路径")
 (defconst my-emacs-templates-path (concat my-emacs-path "templates/") "Path for templates")
