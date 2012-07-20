@@ -53,6 +53,13 @@
   (find-file (concat my-emacs-path ".emacs")))
 (global-set-key (kbd "C-x E") 'visit-.emacs)
 
+;; time-stamp, 在文件头记录修改时间, 并动态更新
+(require 'time-stamp-settings)
+
+;; 简写模式
+(setq-default abbrev-mode t)
+(setq save-abbrevs nil)
+
 ;; 所有关于buffer方面的配置
 (require 'all-buffer-settings)
 
@@ -71,7 +78,7 @@
 
 ;; session,可以保存很多东西，例如输入历史(像搜索、打开文件等的输入)、
 ;; register的内容、buffer的local variables以及kill-ring和最近修改的文件列表等。非常有用。
-(require 'session-settings)
+;; (require 'session-settings)
 
 ;; 王纯业的desktop, 比desktop快多了
 (require 'wcy-desktop-settings)
