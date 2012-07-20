@@ -41,6 +41,9 @@
 ;; 使用git-emacs来进行版本控制，避免了在Terminal和编辑区域的切换提高了效率
 (require 'git-emacs-settings)
 
+;; 有关eshell的配置
+(require 'eshell-settings)
+
 ;; 各种语言开发方面的设置
 (require 'dev-settings)
 
