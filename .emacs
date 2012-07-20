@@ -21,6 +21,10 @@
 ;; 字体设置
 (require 'font-settings)
 
+;; Emacs可以做为一个server, 然后用emacsclient连接这个server,
+;; 无需再打开两个Emacs
+(require 'emacs-server-settings)
+
 ;; color theme Emacs主题
 (require 'color-theme-settings)
 
@@ -37,6 +41,20 @@
 
 ;; 'mode-line'显示格式
 (require 'mode-line-settings)
+
+;; 可以为重名的buffer在前面加上其父目录的名字来让buffer的名字区分开来，而不是单纯的加一个没有太多意义的序号
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
+
+;; 快捷键访问 .emacs 文件
+(defun visit-.emacs ()
+  "访问.emacs文件"
+  (interactive)
+  (find-file (concat my-emacs-path ".emacs")))
+(global-set-key (kbd "C-x E") 'visit-.emacs)
+
+;; 所有关于buffer方面的配置
+(require 'all-buffer-settings)
 
 ;; 使用git-emacs来进行版本控制，避免了在Terminal和编辑区域的切换提高了效率
 (require 'git-emacs-settings)
@@ -61,4 +79,4 @@
 ;; HACK: 要放在最后,免得会出现比较奇怪的现象
 ;; 保存和恢复工作环境
 ;; desktop,用来保存Emacs的桌面环境 — buffers、以及buffer的文件名、major modes和位置等等
-(require 'desktop-settings)
+;; (require 'desktop-settings)
