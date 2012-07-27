@@ -21,9 +21,28 @@
 ;; 字体设置
 (require 'font-settings)
 
+;; 图片mode
+(require 'image-mode-settings)
+
+;; org是一个非常强大的GTD工具
+(require 'org-settings)
+
+;; org2blog使用org 来发布wordpress
+(require 'org2blog-settings)
+
+;; Sina Weibo设置
+(require 'weibo-settings)
+
 ;; Emacs可以做为一个server, 然后用emacsclient连接这个server,
 ;; 无需再打开两个Emacs
 (require 'emacs-server-settings)
+
+;; 用weblogger写WordPress博客
+;; http://emacser.com/weblogger.htm
+(require 'weblogger-settings)
+
+;; 一些有趣的东西
+(require 'funny)
 
 ;; color theme Emacs主题
 (require 'color-theme-settings)
@@ -78,7 +97,7 @@
 
 ;; session,可以保存很多东西，例如输入历史(像搜索、打开文件等的输入)、
 ;; register的内容、buffer的local variables以及kill-ring和最近修改的文件列表等。非常有用。
-;; (require 'session-settings)
+(require 'session-settings)
 
 ;; 王纯业的desktop, 比desktop快多了
 (require 'wcy-desktop-settings)

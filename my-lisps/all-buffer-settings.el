@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2012-07-20 17:13:32 Friday by Administrator>
+;; Time-stamp: <2012-07-21 11:44:52 Saturday by Administrator>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -17,8 +17,11 @@
 ;; write  to  the Free  Software  Foundation,  Inc., 51  Franklin
 ;; Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
-(define-key global-map (kbd "C-x M-n") 'next-buffer)
-(define-key global-map (kbd "C-x M-p") 'previous-buffer)
+;;(define-key global-map (kbd "C-x M-n") 'next-buffer)
+;;(define-key global-map (kbd "C-x M-p") 'previous-buffer)
+
+(define-key global-map (kbd "M-N") 'next-buffer)
+(define-key global-map (kbd "M-P") 'previous-buffer)
 
 ;; 按下C-x k立即关闭掉当前的buffer
 (global-set-key (kbd "C-x k") 'kill-this-buffer)

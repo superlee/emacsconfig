@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2012-07-18 13:52:20 Tuesday by Lcz>
+;; Time-stamp: <2012-07-22 22:23:58 Sunday by Administrator>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -34,6 +34,9 @@
 
 ;; 在fringe上显示一个小箭头指示当前buffer的边界
 ;(setq-default indicate-buffer-boundaries 'left)
+
+;; 在window下如果出现variable binding depth exceeds max-specpdl-size 错误，则把这个值改大
+(setq max-specpdl-size 90000)
 
 ;; 尽快显示按键序列
 (setq echo-keystrokes 0.1)

@@ -1,0 +1,137 @@
+;; -*- Emacs-Lisp -*-
+
+;; Time-stamp: <2012-07-22 23:49:48 Sunday by Administrator>
+
+(am-add-hooks
+ `(c-mode-common-hook lisp-mode-hook emacs-lisp-mode-hook java-mode-hook)
+ 'hs-minor-mode)
+
+(defun hs-minor-mode-settings ()
+  "settings of `hs-minor-mode'."
+  (defvar hs-headline-max-len 30 "*Maximum length of `hs-headline' to display.")
+
+  (setq hs-isearch-open t)
+
+  (defun hs-display-headline ()
+    (let* ((len (length hs-headline))
+           (headline hs-headline)
+           (postfix ""))
+      (when (>= len hs-headline-max-len)
+        (setq postfix "...")
+        (setq headline (substring hs-headline 0 hs-headline-max-len)))
+      (if hs-headline (concat headline postfix " ") "")))
+
+  (setq-default mode-line-format
+                (append '((:eval (hs-display-headline))) mode-line-format))
+
+  (setq hs-set-up-overlay 'hs-abstract-overlay)
+
+  (defvar hs-overlay-map (make-sparse-keymap) "Keymap for hs minor mode overlay.")
+
+  (eal-define-keys-commonly
+   hs-overlay-map
+   `(("<mouse-1>" hs-show-block)))
+
+  (defun hs-abstract-overlay (ov)
+    (let* ((start (overlay-start ov))
+           (end (overlay-end ov))
+           (str (format "<%d lines>" (count-lines start end))) text)
+      (setq text (propertize str 'face 'hs-block-flag-face 'help-echo (buffer-substring (1+ start) end)))
+      (overlay-put ov 'display text)
+      (overlay-put ov 'pointer 'hand)
+      (overlay-put ov 'keymap hs-overlay-map)))
+
+  (defvar hs-hide-all nil "Current state of hideshow for toggling all.")
+  (make-local-variable 'hs-hide-all)
+  
+  (defun hs-toggle-hiding-all ()
+    "Toggle hideshow all."
+    (interactive)
+    (setq hs-hide-all (not hs-hide-all))
+    (if hs-hide-all
+        (hs-hide-all)
+      (hs-show-all)))
+
+  (defvar fold-all-fun nil "Function to fold all.")
+  (make-variable-buffer-local 'fold-all-fun)
+  (defvar fold-fun nil "Function to fold.")
+  (make-variable-buffer-local 'fold-fun)
+  
+  (defun toggle-fold-all ()
+    "Toggle fold all."
+    (interactive)
+    (if fold-all-fun
+        (call-interactively fold-all-fun)
+      (hs-toggle-hiding-all)))
+
+  (defun toggle-fold ()
+    "Toggle fold."
+    (interactive)
+    (if fold-fun
+        (call-interactively fold-fun)
+      (hs-toggle-hiding)))
+  
+  (defun hs-minor-mode-4-emaci-settings ()
+    "Settings of `hs-minor-mode' for `emaci'."
+    (eal-define-keys
+     'emaci-mode-map
+     `(("s" toggle-fold)
+       ("S" toggle-fold-all))))
+
+  (eval-after-load "emaci"
+    '(hs-minor-mode-4-emaci-settings))
+  
+  (define-key-list
+    hs-minor-mode-map
+    `(("C-c h" hs-hide-block)
+      ("C-c H" hs-hide-all)
+      ("C-c e" hs-show-block)
+      ("C-c E" hs-show-all))))
+
+(eval-after-load "hideshow"
+  '(hs-minor-mode-settings))
+
+;; 输入左大花扩号自动补齐右大花括号
+(eal-define-keys
+ `(c-mode-base-map awk-mode-map)
+ `(("{" skeleton-c-mode-left-brace)))
+
+;; 动态检查语法错误
+(require 'flymake-settings)
+
+(defun skeleton-c-mode-left-brace (arg)
+  (interactive "P")
+  (if  (c-in-literal (c-most-enclosing-brace (c-parse-state)))
+      (self-insert-command 1)
+    ;; auto insert complex things.
+    (let* ((current-line (delete-and-extract-region (line-beginning-position) (line-end-position)))
+           (lines (and arg (mark t) (delete-and-extract-region (mark t) (point))))
+           (after-point (make-marker)))
+       ;;; delete extra blank begin and after the LINES
+      (setq lines (and lines
+                       (with-temp-buffer
+                         (insert lines)
+                         (beginning-of-buffer)
+                         (delete-blank-lines)
+                         (delete-blank-lines)
+                         (end-of-buffer)
+                         (delete-blank-lines)
+                         (delete-blank-lines)
+                         (buffer-string))))
+      (save-excursion
+        (let* ((old-point (point)))
+          (insert (if current-line current-line "")  "{\n")
+          (and lines (insert lines))
+          (move-marker after-point (point))
+          (insert "\n}")
+          (indent-region old-point (point) nil)))
+      (goto-char after-point)
+      (c-indent-line))))
+
+
+;; cedet 强大的开发工具, 包括代码浏览, 补全, 类图生成
+;; 用CEDET浏览和编辑C++代码 http://emacser.com/cedet.htm
+;; Emacs才是世界上最强大的IDE － cedet的安装 http://emacser.com/install-cedet.htm
+(require 'cedet-settings)
+
+(provide 'hs-minor-mode-settings)

@@ -1,6 +1,7 @@
+
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2012-07-19 10:58:00 Thursday by lcz>
+;; Time-stamp: <2012-07-24 11:52:20 Tuesday by lcz>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -34,5 +35,58 @@
 
 ;; 所有的自动补全的配置
 (require 'all-auto-complete-settings)
+
+;; hs-minor-mode,折叠代码
+(require 'hs-minor-mode-settings)
+
+;; 输入左大花扩号自动补齐右大花括号
+(eal-define-keys
+ `(c-mode-base-map awk-mode-map)
+ `(("{" skeleton-c-mode-left-brace)))
+
+;; 动态检查语法错误
+(require 'flymake-settings)
+
+(defun skeleton-c-mode-left-brace (arg)
+  (interactive "P")
+  (if  (c-in-literal (c-most-enclosing-brace (c-parse-state)))
+      (self-insert-command 1)
+    ;; auto insert complex things.
+    (let* ((current-line (delete-and-extract-region (line-beginning-position) (line-end-position)))
+           (lines (and arg (mark t) (delete-and-extract-region (mark t) (point))))
+           (after-point (make-marker)))
+       ;;; delete extra blank begin and after the LINES
+      (setq lines (and lines
+                       (with-temp-buffer
+                         (insert lines)
+                         (beginning-of-buffer)
+                         (delete-blank-lines)
+                         (delete-blank-lines)
+                         (end-of-buffer)
+                         (delete-blank-lines)
+                         (delete-blank-lines)
+                         (buffer-string))))
+      (save-excursion
+        (let* ((old-point (point)))
+          (insert (if current-line current-line "")  "{\n")
+          (and lines (insert lines))
+          (move-marker after-point (point))
+          (insert "\n}")
+          (indent-region old-point (point) nil)))
+      (goto-char after-point)
+      (c-indent-line))))
+
+
+;; cedet 强大的开发工具, 包括代码浏览, 补全, 类图生成
+;; 用CEDET浏览和编辑C++代码 http://emacser.com/cedet.htm
+;; Emacs才是世界上最强大的IDE － cedet的安装 http://emacser.com/install-cedet.htm
+;; 仍然有些bug，一些函数不存在了 
+(require 'cedet-settings)
+
+;; ecb 代码浏览器
+(require 'ecb-settings)
+
+;; 像Eclipse那样高亮光标处单词
+(require 'highlight-symbol-settings)
 
 (provide 'dev-settings)
