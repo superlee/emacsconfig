@@ -1,6 +1,7 @@
 ;; .emacs profile, written by Chaozheng Li
  
 (defconst my-emacs-path           "~/emacsconfig/" "我的emacs相关配置文件的路径")
+(defconst my-org-path             "e:/Dropbox/MyNote/org/" "我的org相关文件的路径")
 (defconst my-emacs-my-lisps-path  (concat my-emacs-path "my-lisps/") "我自己写的emacs lisp包的路径")
 (defconst my-emacs-lisps-path     (concat my-emacs-path "lisps/") "我下载的emacs lisp包的路径")
 (defconst my-emacs-templates-path (concat my-emacs-path "templates/") "Path for templates")
@@ -71,6 +72,14 @@
   (interactive)
   (find-file (concat my-emacs-path ".emacs")))
 (global-set-key (kbd "C-x E") 'visit-.emacs)
+
+;; 快捷键访问 org-calendar 文件
+(defun visit-org-calendar ()
+  "访问org-calendar文件"
+  (interactive)
+  (find-file (concat my-org-path "一周工作总结.org")))
+(global-set-key (kbd "C-x O") 'visit-org-calendar)
+
 
 ;; time-stamp, 在文件头记录修改时间, 并动态更新
 (require 'time-stamp-settings)

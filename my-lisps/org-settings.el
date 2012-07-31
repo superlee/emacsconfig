@@ -2,7 +2,7 @@
 
 ;; Author: ahei <ahei0802@gmail.com>
 ;; URL: http://code.google.com/p/dea/source/browse/trunk/my-lisps/org-settings.el
-;; Time-stamp: <2012-07-22 18:11:53 Sunday by Administrator>
+;; Time-stamp: <2012-07-31 13:34:56 Tuesday by lcz>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -134,6 +134,7 @@
  'org-mode-map
  `(("C-c e"   org-table-edit-field)
    ("C-k"     org-kill-whole-line)
+   ("C-c a"     org-agenda)
    ("C-c M-b" org-export-as-html-and-open)
    ("C-c M-h" org-export-as-html)
    ("<tab>"   nil)
@@ -167,5 +168,7 @@
 
 (eval-after-load "org-colview"
   `(org-colview-settings))
+
+(setq org-agenda-files (list "e:/Dropbox/MyNote/org/一周工作总结.org"))
 
 (provide 'org-settings)
