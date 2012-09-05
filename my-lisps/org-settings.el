@@ -2,7 +2,7 @@
 
 ;; Author: ahei <ahei0802@gmail.com>
 ;; URL: http://code.google.com/p/dea/source/browse/trunk/my-lisps/org-settings.el
-;; Time-stamp: <2012-07-31 13:34:56 Tuesday by lcz>
+;; Time-stamp: <2012-08-29 13:48:56 Wednesday by lcz>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -133,7 +133,7 @@
 (eal-define-keys
  'org-mode-map
  `(("C-c e"   org-table-edit-field)
-   ("C-k"     org-kill-whole-line)
+   ;;("C-k"     org-kill-whole-line)
    ("C-c a"     org-agenda)
    ("C-c M-b" org-export-as-html-and-open)
    ("C-c M-h" org-export-as-html)

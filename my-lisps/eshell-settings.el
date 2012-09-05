@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2012-07-19 17:43:10 Thursday by lcz>
+;; Time-stamp: <2012-08-01 17:48:55 Wednesday by lcz>
 
 (global-set-key (kbd "<f1>") 'eshell)
 
@@ -12,6 +12,8 @@
     (setq scroll-margin 0))
 
   (add-hook 'eshell-mode-hook 'eshell-mode-hook-settings))
+
+(setq shell-file-name "/bin/bash") 
 
 (eval-after-load "eshell"
   `(eshell-settings))

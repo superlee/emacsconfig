@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2012-07-21 11:44:52 Saturday by Administrator>
+;; Time-stamp: <2012-08-30 15:07:14 Thursday by lcz>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -31,7 +31,7 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; 非常方便的切换buffer和打开文件
-(require 'ido-settings)
+;; (require 'ido-settings)
 
 ;; 像linux系统下alt-tab那样选择buffer, 但是更直观, 更方便
 ;; (require 'select-buffer)
