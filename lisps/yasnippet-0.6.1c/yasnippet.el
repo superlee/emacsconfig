@@ -1,4 +1,4 @@
-;;; Yasnippet.el --- Yet another snippet extension for Emacs.
+;;; yasnippet.el --- Yet another snippet extension for Emacs.
 
 ;; Copyright 2008 pluskid
 ;;           2009 pluskid, joaotavora
@@ -2356,7 +2356,7 @@ With optional string TEXT do it in that string."
   "Sort the fields of SNIPPET in navigation order."
   (setf (yas/snippet-fields snippet)
         (sort (yas/snippet-fields snippet)
-              '(lambda (field1 field2)
+              #'(lambda (field1 field2)
                  (yas/snippet-field-compare field1 field2)))))
 
 (defun yas/snippet-field-compare (field1 field2)

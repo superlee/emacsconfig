@@ -39,7 +39,7 @@
 ;; Note: the frame size may change during the change of fontset!
 
 (defvar my-latin-font "Courier New")
-(defvar my-chinese-font "新宋体")
+(defvar my-chinese-font "微软雅黑")
 (defvar my-fontset "fontset-courier")
 
 (defvar my-latin-size 17)
@@ -188,6 +188,14 @@
 (defun lcz-fontset-consolas0 (&optional size)
   (interactive "P")
   (setq my-latin-font "Consolas")
+  (setq my-chinese-font "新宋体")  
+  (if size
+      (setq my-latin-size size))
+  (lcz-set-font my-latin-size))
+
+(defun lcz-fontset-inconsolata (&optional size)
+  (interactive "P")
+  (setq my-latin-font "Lucida Sans Typewriter")
   (setq my-chinese-font "新宋体")  
   (if size
       (setq my-latin-size size))

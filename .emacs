@@ -1,18 +1,36 @@
 ;; .emacs profile, written by Chaozheng Li
+
+(if (string-equal system-type "windows-nt")
+    ;;window下的配置
+    (progn
+      (defconst my-emacs-path           "~/emacsconfig/" "我的emacs相关配置文件的路径")
+      (defconst my-org-path             "e:/Dropbox/MyNote/org/" "我的org相关文件的路径")
+      (defconst my-emacs-my-lisps-path  (concat my-emacs-path "my-lisps/") "我自己写的emacs lisp包的路径")
+      (defconst my-emacs-lisps-path     (concat my-emacs-path "lisps/") "我下载的emacs lisp包的路径")
+      (defconst my-emacs-templates-path (concat my-emacs-path "templates/") "Path for templates")
+
+      (load (concat my-emacs-my-lisps-path "my-subdirs"))
+      (my-add-subdirs-to-load-path my-emacs-lisps-path)
+      (my-add-subdirs-to-load-path my-emacs-my-lisps-path)
+      ;; cygwin 设置
+      (require 'setup-cygwin)
+
+      )
+  (if (string-equal system-type "gnu/linux")
+      (progn
+	(defconst my-emacs-path           "/mnt/windowsd/emacsconfig/" "我的emacs相关配置文件的路径")
+	(defconst my-org-path             "/mnt/windowse/Dropbox/MyNote/org/" "我的org相关文件的路径")
+	(defconst my-emacs-my-lisps-path  (concat my-emacs-path "my-lisps/") "我自己写的emacs lisp包的路径")
+	(defconst my-emacs-lisps-path     (concat my-emacs-path "lisps/") "我下载的emacs lisp包的路径")
+	(defconst my-emacs-templates-path (concat my-emacs-path "templates/") "Path for templates")
+
+	(load (concat my-emacs-my-lisps-path "my-subdirs"))
+	(my-add-subdirs-to-load-path my-emacs-lisps-path)
+	(my-add-subdirs-to-load-path my-emacs-my-lisps-path)
+	)
+      )
+)
  
-(defconst my-emacs-path           "~/emacsconfig/" "我的emacs相关配置文件的路径")
-(defconst my-org-path             "e:/Dropbox/MyNote/org/" "我的org相关文件的路径")
-(defconst my-emacs-my-lisps-path  (concat my-emacs-path "my-lisps/") "我自己写的emacs lisp包的路径")
-(defconst my-emacs-lisps-path     (concat my-emacs-path "lisps/") "我下载的emacs lisp包的路径")
-(defconst my-emacs-templates-path (concat my-emacs-path "templates/") "Path for templates")
-
-(load (concat my-emacs-my-lisps-path "my-subdirs"))
-(my-add-subdirs-to-load-path my-emacs-lisps-path)
-(my-add-subdirs-to-load-path my-emacs-my-lisps-path)
-
-;; cygwin 设置
-(require 'setup-cygwin)
-
 ;; 一些基本的小函数
 (require 'ahei-misc)
 
@@ -32,7 +50,7 @@
 (require 'org2blog-settings)
 
 ;; Sina Weibo设置
-(require 'weibo-settings)
+;;(require 'weibo-settings)
 
 ;; Emacs可以做为一个server, 然后用emacsclient连接这个server,
 ;; 无需再打开两个Emacs
@@ -40,7 +58,7 @@
 
 ;; 用weblogger写WordPress博客
 ;; http://emacser.com/weblogger.htm
-(require 'weblogger-settings)
+;;(require 'weblogger-settings)
 
 ;; 一些有趣的东西
 (require 'funny)

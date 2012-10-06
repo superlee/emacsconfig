@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2012-07-25 15:40:08 Wednesday by lcz>
+;; Time-stamp: <2012-10-06 22:28:00 Saturday by lcz>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -22,10 +22,6 @@
       `(("lichaozheng.info"
          :url "http://www.lichaozheng.info/xmlrpc.php"
          :username "superlee"
-         :password 3593895
-         :keep-new-lines t
-         :confirm t
-         :wp-code nil
          :tags-as-categories nil)
         ))
 
@@ -36,6 +32,13 @@
 #+TAGS:
 #+PERMALINK:
 #+TITLE:
-\n")
+\n
+
+#+BEGIN_CENTER 
+Copyright © 2012, 超破. All rights reserved. \n
+除非注明，超破的Blog文章均为原创，转载请以链接形式标明本文地址。\n
+#+END_CENTER
+\n
+")
 
 (provide 'org2blog-settings)

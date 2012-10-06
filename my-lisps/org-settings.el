@@ -2,7 +2,7 @@
 
 ;; Author: ahei <ahei0802@gmail.com>
 ;; URL: http://code.google.com/p/dea/source/browse/trunk/my-lisps/org-settings.el
-;; Time-stamp: <2012-08-29 13:48:56 Wednesday by lcz>
+;; Time-stamp: <2012-09-06 01:08:56 Thursday by lcz>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -31,7 +31,8 @@
 
   (setq org-startup-folded nil
         org-cycle-include-plain-lists t
-        org-export-kill-product-buffer-when-displayed t)
+        org-export-kill-product-buffer-when-displayed t
+	org-startup-with-inline-images t)
   (setq org-log-done 'time)
   (setq org-todo-keywords
         '((sequence "TODO(t)" "UNDERGOING(u)" "|" "DONE(d)" "CANCELED(c)")))

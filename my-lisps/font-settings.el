@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2010-10-11 20:00:55 Monday by taoshanwen>
+;; Time-stamp: <2012-09-06 01:06:29 Thursday by lcz>
 
 (when (and window-system is-after-emacs-23)
   (require 'my-fontset-win)
