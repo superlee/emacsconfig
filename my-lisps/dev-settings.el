@@ -1,7 +1,7 @@
 
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2012-07-24 11:52:20 Tuesday by lcz>
+;; Time-stamp: <2012-10-15 15:48:17 Monday by lcz>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -88,5 +88,8 @@
 
 ;; 像Eclipse那样高亮光标处单词
 (require 'highlight-symbol-settings)
+
+;;ahk 设置
+(require 'ahk-settings)
 
 (provide 'dev-settings)

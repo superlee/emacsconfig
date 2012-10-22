@@ -132,6 +132,9 @@
 ;; 快速跳转
 (require 'quick-jump)
 
+;; org 到 Presentation
+(require 'html5presentation_settings)
+
 ;; HACK: 要放在最后,免得会出现比较奇怪的现象
 ;; 保存和恢复工作环境
 ;; desktop,用来保存Emacs的桌面环境 — buffers、以及buffer的文件名、major modes和位置等等

@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2012-09-06 00:08:09 Thursday by lcz>
+;; Time-stamp: <2012-10-21 01:11:04 Sunday by lcz>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -22,6 +22,11 @@
 (setq user-full-name    "lcz")
 
 (setq-default default-directory "~")
+
+;;tab = 2 space
+(setq default-tab-width 4)
+(setq tab-width 4)
+(setq-default indent-tabs-mode nil)
 
 ;; 打开图片显示功能
 (auto-image-file-mode t) 
@@ -47,7 +52,7 @@
 (tool-bar-mode nil)
 
 ;; 隐藏滚动条
-(scroll-bar-mode nil)
+(customize-set-variable 'scroll-bar-mode 'nil) 
 
 ;; 隐藏菜单
 (menu-bar-mode nil)
