@@ -1,7 +1,7 @@
 
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2012-10-15 15:48:17 Monday by lcz>
+;; Time-stamp: <2012-10-28 13:40:30 Sunday by lcz>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -91,5 +91,8 @@
 
 ;;ahk …Ë÷√
 (require 'ahk-settings)
+
+;; R language …Ë÷√
+(require 'ess-settings)
 
 (provide 'dev-settings)
