@@ -1,0 +1,20 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("R"
+ (filename . "e:/Dropbox/r/")
+ (front-context-string . ".RData\n  -rw-rw-")
+ (rear-context-string . "39 Oct 29 11:51 ")
+ (position . 229))
+("macro_index"
+ (filename . "e:/Dropbox/MyNote/org/org/ImageJ_Macro/index.org")
+ (front-context-string)
+ (rear-context-string . "\n#+END_CENTER\n\n\n")
+ (position . 2174))
+("dotemacs"
+ (filename . "d:/emacsconfig/.emacs")
+ (front-context-string . " written by Chao")
+ (rear-context-string . " .emacs profile,")
+ (position . 19))
+)

@@ -1,0 +1,34 @@
+;; -*- Emacs-Lisp -*-
+
+;; Time-stamp: <2012-10-28 18:45:05 Sunday by lcz>
+
+;; This  file is free  software; you  can redistribute  it and/or
+;; modify it under the terms of the GNU General Public License as
+;; published by  the Free Software Foundation;  either version 3,
+;; or (at your option) any later version.
+
+;; This file is  distributed in the hope that  it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR  A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You  should have  received a  copy of  the GNU  General Public
+;; License along with  GNU Emacs; see the file  COPYING.  If not,
+;; write  to  the Free  Software  Foundation,  Inc., 51  Franklin
+;; Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+(require 'ess-site)
+
+(setq-default inferior-R-program-name "Rterm")
+(setq-default inferior-R-program-name "d:\\Program Files\\R\\R-2.15.2\\bin\\i386\\Rterm.exe")
+
+;;; 以及其它的一些设置
+;;; some customizations
+(setq ess-ask-for-ess-directory t)
+(setq inferior-ess-same-window nil)
+
+(setq inferior-ess-font-lock-keywords t)
+(setq ess-mode-font-lock-keywords t)
+(setq ess-trans-font-lock-keywords t)
+
+(provide 'ess-settings)
