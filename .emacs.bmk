@@ -2,7 +2,22 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("R"
+(("hosts"
+ (filename . "c:/WINDOWS/system32/drivers/etc/hosts")
+ (front-context-string . "	cfmmurgvo3fqrmf")
+ (rear-context-string . "	\n74.125.227.146")
+ (position . 12105))
+("paper"
+ (filename . "e:/Dropbox/paper/")
+ (front-context-string . "CZT paper Draft-")
+ (rear-context-string . "49 Sep  1 17:15 ")
+ (position . 242))
+("IBM"
+ (filename . "e:/Dropbox/MyNote/org/IBM/")
+ (front-context-string . "CodeStudy.org\n  ")
+ (rear-context-string . "68 Sep  4 23:28 ")
+ (position . 246))
+("R"
  (filename . "e:/Dropbox/r/")
  (front-context-string . ".RData\n  -rw-rw-")
  (rear-context-string . "39 Oct 29 11:51 ")
