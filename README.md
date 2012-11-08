@@ -14,5 +14,6 @@ the configure file for emacs
 # To use the full feature of this emacs configure, You need the softwares as follow:
 
 ## Cygwin (on Windows Required) 
+### My default Cygwin path is D:/cygwin. If it different with yours, please replace the path to yours in lisp/setup-cygwin.el
 ## graphviz (Option)
 ## R Language (Option)
