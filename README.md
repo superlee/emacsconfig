@@ -17,3 +17,17 @@ the configure file for emacs
 ### My default Cygwin path is D:/cygwin. If it different with yours, please replace the path to yours in lisp/setup-cygwin.el
 ## graphviz (Option)
 ## R Language (Option)
+
+# Self define key
+|             |                        | <15>            |
+|-------------+------------------------+-----------------|
+| Key         | Command                | Description     |
+|-------------+------------------------+-----------------|
+| Shift-Space | set-mark-command       | Set the mark where point is, or jump to the mark |
+| F1          | eshell                 | Enter eshell    |
+|-------------+------------------------+-----------------|
+| F12         | cua-selection-mode     | Enable cua mode |
+| C-return    | cua-set-rectangle-mark | Set mark and start in CUA rectangle mode |
+|             |                        |                 |
+  
+

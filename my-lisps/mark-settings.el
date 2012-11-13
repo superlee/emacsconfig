@@ -1,7 +1,9 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2012-07-17 16:20:00 Tuesday by Lcz>
+;; Time-stamp: <2012-11-13 12:47:42 Tuesday by lcz>
 
+(require 'util)
 (global-set-key [?\S- ] 'set-mark-command)
+
 
 (provide 'mark-settings)
