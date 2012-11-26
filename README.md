@@ -28,6 +28,6 @@ the configure file for emacs
 |-------------+------------------------+-----------------|
 | F12         | cua-selection-mode     | Enable cua mode |
 | C-return    | cua-set-rectangle-mark | Set mark and start in CUA rectangle mode |
-|             |                        |                 |
+
   
 

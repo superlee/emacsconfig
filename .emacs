@@ -50,7 +50,7 @@
 (require 'org2blog-settings)
 
 ;; Sina Weibo设置
-;;(require 'weibo-settings)
+(require 'weibo-settings)
 
 ;; Emacs可以做为一个server, 然后用emacsclient连接这个server,
 ;; 无需再打开两个Emacs
