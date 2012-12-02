@@ -1,7 +1,7 @@
 
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2012-10-28 13:40:30 Sunday by lcz>
+;; Time-stamp: <2012-12-02 20:10:58 Sunday by lcz>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -17,6 +17,8 @@
 ;; License along with  GNU Emacs; see the file  COPYING.  If not,
 ;; write  to  the Free  Software  Foundation,  Inc., 51  Franklin
 ;; Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+;; 
 
 ;; 语法高亮
 (global-font-lock-mode t)
@@ -95,4 +97,9 @@
 ;; R language 设置
 (require 'ess-settings)
 
+;; 方便开发c/c++的配置
+(require 'c-settings)
+
 (provide 'dev-settings)
+
+

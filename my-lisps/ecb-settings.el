@@ -2,7 +2,7 @@
 
 ;; Author: ahei <ahei0802@gmail.com>
 ;; URL: http://code.google.com/p/dea/source/browse/trunk/my-lisps/ecb-settings.el
-;; Time-stamp: <2010-04-10 15:59:33 Saturday by ahei>
+;; Time-stamp: <2012-12-02 20:50:43 Sunday by lcz>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -19,10 +19,16 @@
 ;; write  to  the Free  Software  Foundation,  Inc., 51  Franklin
 ;; Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
-(require 'ecb-autoloads)
+(setq stack-trace-on-error t)
+
+(require 'ecb)
+
+;; Disable the tip of the day
+(setq ecb-tip-of-the-day nil)
+
 
 (defun ecb ()
-  "启动ecb"
+  "ecb"
   (interactive)
   (ecb-activate)
   (ecb-layout-switch "left9"))

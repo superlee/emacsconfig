@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2011-06-06 17:59:36 Monday by taoshanwen>
+;; Time-stamp: <2012-11-27 17:15:14 Tuesday by lcz>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -34,5 +34,8 @@
 
 ;; graphviz的mode
 (require 'graphviz-dot-mode)
+
+;; Edit with Emacs on Chrome textarea
+(require 'EmacsChrome-settings)
 
 (provide 'funny)
