@@ -2,7 +2,7 @@
 
 ;; Author: ahei <ahei0802@gmail.com>
 ;; URL: http://code.google.com/p/dea/source/browse/trunk/my-lisps/ecb-settings.el
-;; Time-stamp: <2012-12-02 20:50:43 Sunday by lcz>
+;; Time-stamp: <2013-01-13 15:00:43 Sunday by lcz>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -21,7 +21,8 @@
 
 (setq stack-trace-on-error t)
 
-(require 'ecb)
+(require 'semantic-load)
+(require 'ecb-autoloads)
 
 ;; Disable the tip of the day
 (setq ecb-tip-of-the-day nil)

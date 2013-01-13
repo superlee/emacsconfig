@@ -2,7 +2,7 @@
 
 ;; Author: ahei <ahei0802@gmail.com>
 ;; URL: http://code.google.com/p/dea/source/browse/trunk/my-lisps/org-settings.el
-;; Time-stamp: <2012-09-06 01:08:56 Thursday by lcz>
+;; Time-stamp: <2012-12-03 23:54:22 Monday by lcz>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -25,6 +25,8 @@
 ;;   'turn-on-orgstruct)
 
 (require 'org-install)
+
+(setq org-latex-preview-ltxpng-directory my-emacs-path)
 
 (defun org-settings ()
   "Settings for `org'."

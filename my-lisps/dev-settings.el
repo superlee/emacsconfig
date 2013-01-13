@@ -1,7 +1,7 @@
 
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2012-12-02 20:10:58 Sunday by lcz>
+;; Time-stamp: <2013-01-13 23:59:15 Sunday by lcz>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -23,17 +23,17 @@
 ;; 语法高亮
 (global-font-lock-mode t)
 
-;; 增加自定义关键字
-(dolist (mode '(c-mode c++-mode java-mode lisp-mode emacs-lisp-mode
-                       lisp-interaction-mode sh-mode sgml-mode))
-  (font-lock-add-keywords
-   mode
-   '(("\\<\\(FIXME\\|TODO\\|Todo\\|HACK\\):" 1 font-lock-warning-face prepend)
-     ("\\<\\(and\\|or\\|not\\)\\>" . font-lock-keyword-face)
-     ("(\\|)" . beautiful-blue-face)
-     ("\\[\\|]" . yellow-face)
-     ("<\\|>" . cyan-face)
-     ("{\\|}" . green-face))))
+;; ;; 增加自定义关键字
+;; (dolist (mode '(c-mode c++-mode java-mode lisp-mode emacs-lisp-mode
+;;                        lisp-interaction-mode sh-mode sgml-mode))
+;;   (font-lock-add-keywords
+;;    mode
+;;    '(("\\<\\(FIXME\\|TODO\\|Todo\\|HACK\\):" 1 font-lock-warning-face prepend)
+;;      ("\\<\\(and\\|or\\|not\\)\\>" . font-lock-keyword-face)
+;;      ("(\\|)" . beautiful-blue-face)
+;;      ("\\[\\|]" . yellow-face)
+;;      ("<\\|>" . cyan-face)
+;;      ("{\\|}" . green-face))))
 
 ;; 所有的自动补全的配置
 (require 'all-auto-complete-settings)
@@ -99,6 +99,12 @@
 
 ;; 方便开发c/c++的配置
 (require 'c-settings)
+
+;; java 开发
+(require 'java-settings)
+
+;;cscope
+(require 'cscope-settings)
 
 (provide 'dev-settings)
 

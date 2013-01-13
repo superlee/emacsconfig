@@ -18,8 +18,8 @@
       )
   (if (string-equal system-type "gnu/linux")
       (progn
-	(defconst my-emacs-path           "/mnt/windowsd/emacsconfig/" "我的emacs相关配置文件的路径")
-	(defconst my-org-path             "/mnt/windowse/Dropbox/MyNote/org/" "我的org相关文件的路径")
+	(defconst my-emacs-path           "/mnt/windows_d/emacsconfig/" "我的emacs相关配置文件的路径")
+	(defconst my-org-path             "/mnt/windows_e/Dropbox/MyNote/org/" "我的org相关文件的路径")
 	(defconst my-emacs-my-lisps-path  (concat my-emacs-path "my-lisps/") "我自己写的emacs lisp包的路径")
 	(defconst my-emacs-lisps-path     (concat my-emacs-path "lisps/") "我下载的emacs lisp包的路径")
 	(defconst my-emacs-templates-path (concat my-emacs-path "templates/") "Path for templates")

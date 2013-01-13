@@ -2,7 +2,7 @@
 
 ;; Author: ahei <ahei0802@gmail.com>
 ;; URL: http://code.google.com/p/dea/source/browse/trunk/my-lisps/kde-emacs-settings.el
-;; Time-stamp: <2012-05-19 23:22:05 Saturday by ahei>
+;; Time-stamp: <2012-12-03 20:25:41 Monday by lcz>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -40,11 +40,7 @@
   (am-add-hooks
    `(java-mode-hook)
    (lambda ()
-     (c-set-style "kde-c++")))
-
-  (eal-define-keys-commonly
-   global-map
-   `(("M-w" smart-copy))))
+     (c-set-style "kde-c++"))))
 
 (eval-after-load "kde-emacs-utils"
   `(kde-emacs-settings))

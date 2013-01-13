@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2010-05-27 17:57:21 Thursday by ahei>
+;; Time-stamp: <2013-01-14 00:07:31 Monday by lcz>
 
 ;; emacser.com/highlight-symbol.htm
 
