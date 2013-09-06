@@ -10,7 +10,7 @@ the configure file for emacs
 ## Move the .emacs_move_this_to_home_path_and_change_filename to the System_Home_Path 
 ## Change the name .emacs_move_this_to_home_path_and_change_filename to .emacs
 ## Change the path in (load-file "D:/emacsconfig/.emacs") to the path of your system, such as (load-file "c:/Documents and Settings/Administrator/emacsconfig/.emacs")
-
+## move the runemacsclienttw.exe to the d:/ and set the editor of git Or modify the variable magit-emacsclient-executable 
 # To use the full feature of this emacs configure, You need the softwares as follow:
 
 ## Cygwin (on Windows Required) 

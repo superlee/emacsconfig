@@ -2,7 +2,7 @@
 
 ;; Author: ahei <ahei0802@gmail.com>
 ;; URL: http://code.google.com/p/dea/source/browse/trunk/my-lisps/org-settings.el
-;; Time-stamp: <2012-12-03 23:54:22 Monday by lcz>
+;; Time-stamp: <2013-09-04 17:15:46 Wednesday by lcz>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -37,7 +37,7 @@
 	org-startup-with-inline-images t)
   (setq org-log-done 'time)
   (setq org-todo-keywords
-        '((sequence "TODO(t)" "UNDERGOING(u)" "|" "DONE(d)" "CANCELED(c)")))
+        '((sequence "TODO(t)" "UNDERGOING(u!)" "|" "DONE(d)" "CANCELED(c)")))
 
   (require 'iimage)
   
@@ -172,6 +172,14 @@
 (eval-after-load "org-colview"
   `(org-colview-settings))
 
-(setq org-agenda-files (list "e:/Dropbox/MyNote/org/一周工作总结.org"))
+(setq org-agenda-files (list "e:/Dropbox/MyNote/org/一周工作总结.org"
+                             "e:/Dropbox/MyNote/org/work.org"
+                             "e:/Dropbox/MyNote/org/work.org_archive"
+                             "e:/Dropbox/MyNote/org/home.org"
+                             "e:/Dropbox/MyNote/org/home.org_archive"))
+(defalias 'org-indent-line 'org-indent-line-function)
+
+(setq org-clock-persist 'history)
+(org-clock-persistence-insinuate)
 
 (provide 'org-settings)

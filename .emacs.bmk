@@ -2,7 +2,17 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("MachineResource.org"
+(("org-refile-last-stored"
+ (filename . "e:/Dropbox/MyNote/org/work.org_archive")
+ (front-context-string . "** DONE ²Î¼ÓTMC\n  ")
+ (rear-context-string . " DONE\n   :END:\n\n")
+ (position . 43334))
+("PMR"
+ (filename . "e:/VSS/PMR/")
+ (front-context-string . "00068,603,603\n  ")
+ (rear-context-string . " 0 Mar 20 10:38 ")
+ (position . 239))
+("MachineResource.org"
  (filename . "e:/Dropbox/MyNote/org/IBM/MachineResource.org")
  (front-context-string)
  (rear-context-string . "6P2-DRJGC-2HHR3\n")

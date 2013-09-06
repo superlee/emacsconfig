@@ -15,6 +15,11 @@
       ;; cygwin 设置
       (require 'setup-cygwin)
 
+      ;; Git path configuration
+      (setq exec-path (add-to-list 'exec-path "C:/Program Files (x86)/Git/bin"))
+      (setenv "PATH" (concat "C:\\Program Files (x86)\\Git\\bin;" (getenv "PATH")))
+      ;; move the runemacsclienttw.exe to the d:/ and set the editor of git 
+      (setq magit-emacsclient-executable "d:/emacs/bin/emacsclientw.exe")
       )
   (if (string-equal system-type "gnu/linux")
       (progn
@@ -24,7 +29,7 @@
 	(defconst my-emacs-lisps-path     (concat my-emacs-path "lisps/") "我下载的emacs lisp包的路径")
 	(defconst my-emacs-templates-path (concat my-emacs-path "templates/") "Path for templates")
 
-	(load (concat my-emacs-my-lisps-path "my-subdirs"))
+ 	(load (concat my-emacs-my-lisps-path "my-subdirs"))
 	(my-add-subdirs-to-load-path my-emacs-lisps-path)
 	(my-add-subdirs-to-load-path my-emacs-my-lisps-path)
 	)
@@ -42,9 +47,6 @@
 
 ;; 图片mode
 (require 'image-mode-settings)
-
-;; org是一个非常强大的GTD工具
-(require 'org-settings)
 
 ;; org2blog使用org 来发布wordpress
 (require 'org2blog-settings)
@@ -84,6 +86,9 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
+;; package的安装源
+(require 'package-settings)
+
 ;; 快捷键访问 .emacs 文件
 (defun visit-.emacs ()
   "访问.emacs文件"
@@ -91,12 +96,18 @@
   (find-file (concat my-emacs-path ".emacs")))
 (global-set-key (kbd "C-x E") 'visit-.emacs)
 
+;; 各种语言开发方面的设置
+(require 'dev-settings)
+
+;; org是一个非常强大的GTD工具,放在dev-setting 后面覆盖 C-c a 的绑定
+(require 'org-settings)
+
 ;; 快捷键访问 org-calendar 文件
 (defun visit-org-calendar ()
   "访问org-calendar文件"
   (interactive)
-  (find-file (concat my-org-path "一周工作总结.org")))
-(global-set-key (kbd "C-x O") 'visit-org-calendar)
+  (find-file (concat my-org-path "work.org")))
+(global-set-key (kbd "C-x W") 'visit-org-calendar)
 
 
 ;; time-stamp, 在文件头记录修改时间, 并动态更新
@@ -114,9 +125,6 @@
 
 ;; 有关eshell的配置
 (require 'eshell-settings)
-
-;; 各种语言开发方面的设置
-(require 'dev-settings)
 
 ;; 打开压缩文件时自动解压缩
 ;; 必须放在session前面
