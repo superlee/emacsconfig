@@ -20,6 +20,7 @@
       (setenv "PATH" (concat "C:\\Program Files (x86)\\Git\\bin;" (getenv "PATH")))
       ;; move the runemacsclienttw.exe to the d:/ and set the editor of git 
       (setq magit-emacsclient-executable "d:/emacs/bin/emacsclientw.exe")
+
       )
   (if (string-equal system-type "gnu/linux")
       (progn
